@@ -25,12 +25,27 @@ const Home: React.FC = () => {
       </div>
 
         <div>
-            <nav className="absolute top-0 left-0 w-full bg- bg-opacity-70 py-2 shadow-md flex justify-end px-6">
-                 <ul className="flex space-x-6 text-base font-medium">
+            <nav className="absolute top-0 left-0 w-full bg-white bg-opacity-70 py-2 px-6 flex justify-between items-center">
+                 <ul className="flex space-x-6 text-base font-medium justify-center w-2/4">
     
-                    <li>Create</li>
-    
+                    <li>Onboarding Guide</li>
+                    <li>Project & Structure</li>
+                    <li>Trainings</li>
+                    <li>Contacts</li>
+                    <li className="relative group cursor-pointer">
+                      Resources ▾
+                    </li>
+
                 </ul>
+
+                <div className="flex justify-end">
+                  <img 
+                  src="/assets/MicrosoftTeams-image(15).png"
+                  alt="Hoonartek Logo"
+                  className="h-10 w-auto"
+                  ></img>
+
+                </div>
             </nav>
         </div>
       {/* Right Side Images */}
@@ -38,12 +53,12 @@ const Home: React.FC = () => {
         <img
           src="/assets/Working-2.jpg"
           alt="People meeting"
-          className="rounded-xl object-cover w-full h-48"
+          className="rounded-xl object-cover w-full h-70"
         />
         <img
           src="/assets/working-people.jpg"
           alt="Team working"
-          className="rounded-xl object-cover w-full h-48"
+          className="rounded-xl object-cover w-full h-70"
         />
         <img
           src="/assets/working-people.jpg"

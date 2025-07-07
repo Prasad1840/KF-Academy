@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         <h2 className="text-lg text-gray-600">Welcome to</h2>
         <h1 className="text-5xl font-bold text-black mt-2">KF Academy</h1>
         <p className="text-gray-600 mt-6 leading-relaxed">
-          Step into your new role with confidence. Explore your team, discover essential resources, and connect with the people who’ll support your journey. Everything you need for a smooth start is right here let’s make your first days inspiring.
+          Step into your new role with confidence. Explore your team, discover essential resources, and connect with the people who'll support your journey. Everything you need for a smooth start is right here let’s make your first days inspiring.
         </p>
         <div className="mt-8 flex gap-4">
           <button className="bg-blue-600 text-white px-6 py-2 rounded-md font-semibold hover:bg-blue-700 transition">

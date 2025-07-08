@@ -1,16 +1,17 @@
-import './App.css'
-import Home from './components/Home'
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Onboarding from "./components/Onboarding";
+import Learnmore from "./components/Learnmore";
 
-function App() {
- 
-
+const App: React.FC = () => {
   return (
-    <>
-      <Home />
-      <Onboarding />
-    </>
-  )
-}
+    <Router>
+      <Routes>
+        <Route path="/" element={<Onboarding />} />
+        <Route path="/learnmore" element={<Learnmore />} />
+      </Routes>
+    </Router>
+  );
+};
 
-export default App
+export default App;

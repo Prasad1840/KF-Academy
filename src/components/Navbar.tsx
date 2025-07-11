@@ -1,5 +1,4 @@
 import { useState, useRef, useEffect } from 'react';
-import Onboarding from './Onboarding';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
@@ -26,35 +25,41 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="absolute top-0 left-0 w-full bg-white bg-opacity-70 py-2 px-6 flex items-center">
+    <nav className="absolute top-3 left-0 w-full  py-2 px-6 flex items-center ">
       {/* Left Spacer */}
-      <div className="w-1/4"></div>
-
+      <div className="w-1/4 flex justify-start">
+        <img
+          src="/assets/KF.png"
+          alt="Hoonartek Logo"
+          className="h-7 w-auto"
+        />
+        
+      </div>
       {/* Center - Nav Links */}
-      <ul className="flex space-x-6 text-base font-medium justify-center w-2/4 relative">
+      <ul className="flex space-x-6 text-white opacity-80 font-medium justify-center w-2/4 relative">
         <li className="group relative cursor-pointer px-2"  >
             <Link to="/onboarding" >Onboarding</Link>
-            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
         </li>
 
         <li className="group relative cursor-pointer px-2">
-            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
             Project & Structure
         </li>
         
         <li className="group relative cursor-pointer px-2">
-            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
-            Trainings
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
+           <Link to="/training">Trainings</Link>
         </li>
 
         <li className="group relative cursor-pointer px-2">
-            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
             Contact
         </li>
 
         
         <li className="group relative cursor-pointer px-2">
-            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-black transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
             About
         </li>
 
@@ -66,7 +71,7 @@ export default function Navbar() {
         >
             FAQ's▾
           <ul
-            className={`absolute left-0 mt-2 flex flex-col bg-white shadow-md rounded-md p-2 z-10 min-w-[160px] transform transition-all duration-200 ease-in-out origin-top ${
+            className={`absolute left-0 mt-2 flex flex-col bg-black shadow-md rounded-md p-2 z-10 min-w-[160px] transform transition-all duration-200 ease-in-out origin-top ${
               showDropdown ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
             }`}
           >
@@ -79,7 +84,7 @@ export default function Navbar() {
       {/* Right - Logo */}
       <div className="w-1/4 flex justify-end">
         <img
-          src="/assets/MicrosoftTeams-image (15).png"
+          src="/assets/Hoonartek-White.png"
           alt="Hoonartek Logo"
           className="h-7 w-auto"
         />

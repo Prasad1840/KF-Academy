@@ -75,6 +75,5 @@ const Home: React.FC = () => {
       <Pod5Layout/>
       </div>
   );
-};
 
 export default Home;

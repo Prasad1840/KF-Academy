@@ -2,6 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import FadeInSection from "../components/FadeInSection";
+import About from '../components/About';
+import Trainings from '../components/Trainings';
+import Pod1Details from '../components/pod-specific/POD-1';
+import Pod5Layout from '../components/pod-specific/POD-5';
 
 const DiagonalStripe = () => {
   return (
@@ -16,6 +20,7 @@ const DiagonalStripe = () => {
 
 const Home: React.FC = () => {
   return (
+    <div>
     <FadeInSection>
     <div className="relative h-screen overflow-hidden">
       {/* Background image with zoom animation */}
@@ -63,6 +68,12 @@ const Home: React.FC = () => {
       </div>
     </div>
     </FadeInSection>
+
+    <About />
+      <Trainings />
+      <Pod1Details />
+      <Pod5Layout/>
+      </div>
   );
 };
 

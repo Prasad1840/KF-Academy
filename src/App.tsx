@@ -5,7 +5,9 @@ import Home from "./pages/Home";
 import Contacts from "./pages/Contacts";
 import Onboarding from "./pages/Onboarding";
 import Learnmore from "./pages/Learnmore";
-import Training from "./pages/Training";
+import ReactTraining from "./pages/training-pages/ReactTraining";
+import AngularTraining from "./pages/training-pages/AngularTraining";
+import TypescriptTraining from "./pages/training-pages/TypescriptTraining";
 
 const App: React.FC = () => {
   return (
@@ -15,7 +17,9 @@ const App: React.FC = () => {
         <Route path="/learnmore" element={<Learnmore />} />
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/contacts" element={<Contacts />} />
-        <Route path="/training" element={<Training />} />
+        <Route path="/training/react" element={<ReactTraining />} />
+        <Route path="/training/angular" element={<AngularTraining />} />
+        <Route path="/training/type-script" element={<TypescriptTraining />} />
       </Routes>
     </Router>
   );

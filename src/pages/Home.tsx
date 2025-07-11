@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 
 const Home: React.FC = () => {
     return (
 
         
-         <div className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20 py-16 gap-10">
+      <div className="flex flex-col-reverse md:flex-row items-center justify-between px-6 md:px-20 py-16 gap-10">
       {/* Left Side Text Content */}
       <div className="max-w-xl">
         <h2 className="text-lg text-gray-600">Welcome to</h2>
@@ -40,7 +40,7 @@ const Home: React.FC = () => {
 
                 <div className="flex justify-end">
                   <img 
-                  src="/assets/MicrosoftTeams-image(15).png"
+                  src="/assets/MicrosoftTeams-image (15).png"
                   alt="Hoonartek Logo"
                   className="h-10 w-auto"
                   ></img>

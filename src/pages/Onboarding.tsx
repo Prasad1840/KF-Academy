@@ -26,7 +26,7 @@ This begins your SAP ID generation, which is essential for accessing Korn Ferry 
 
 Once you receive the SAP ID (via email from the PMO), follow these steps:
 1. Contact Korn Ferry IT Support at 0124-4321020 to retrieve your initial password.
-2. You will be asked for your full name, SAP ID, and your manager’s name (PMO will help if you're unsure).
+2. You will be asked for your full name, SAP ID, and your manager's name (PMO will help if you're unsure).
 3. Once your password is shared, log in to your Korn Ferry Outlook account (firstname.lastname@kornferry.com).
 4. Reset your password and set up Microsoft Authenticator for secure access.
 
@@ -85,7 +85,7 @@ No updates after SAP activation? Contact PMO without delay`
 const Onboarding: React.FC = () => {
   const navigate = useNavigate();
   const [hoveredDescription, setHoveredDescription] = useState(false); 
-   const [showDetails, setShowDetails] = useState(false);
+  // const [showDetails, setShowDetails] = useState(false);
    
   const handleLearnMore = (phaseIndex: number, stepIndex: number) => {
     navigate("/learnmore", { state: { phaseIndex, stepIndex } });

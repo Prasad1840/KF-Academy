@@ -36,7 +36,7 @@ const ReactFullscreen = ({ onClose }: { onClose: () => void }) => {
         style={{ backgroundImage: `url(${logo})` }}
       >
         <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white text-center px-4">
-          <h1 className="italic text-7xl text-[#05C690]  font-bold tracking-tight mb-6">REACT JS</h1>
+          <h1 className="italic text-7xl text-white  font-bold tracking-tight mb-6">REACT JS</h1>
           <button
             className="bg-white text-black px-6 py-2 rounded-full font-semibold"
             onClick={handleClick}

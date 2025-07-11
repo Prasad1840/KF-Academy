@@ -36,7 +36,7 @@ const AngularFullscreen = ({ onClose }: { onClose: () => void }) => {
         style={{ backgroundImage: `url(${logo})` }}
       >
         <div className="absolute inset-0 bg-black/60 flex flex-col items-center justify-center text-white text-center px-4">
-          <h1 className="italic text-7xl text-[#05C690]  font-bold tracking-tight mb-6">
+          <h1 className="italic text-7xl text-white  font-bold tracking-tight mb-6">
             ANGULAR
           </h1>
           <button

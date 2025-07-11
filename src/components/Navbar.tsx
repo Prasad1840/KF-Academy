@@ -29,9 +29,9 @@ export default function Navbar() {
       {/* Left Spacer */}
       <div className="w-1/4 flex justify-start">
         <img
-          src="/assets/KF.png"
+          src="/assets/shared image (1).jpg"
           alt="Hoonartek Logo"
-          className="h-7 w-auto"
+          className="h-8 w-auto"
         />
         
       </div>

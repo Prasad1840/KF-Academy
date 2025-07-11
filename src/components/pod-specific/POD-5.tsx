@@ -11,7 +11,7 @@ const Pod5Layout: React.FC = () => {
         <div
           className="h-[70vh] w-full bg-cover bg-center"
           style={{
-            backgroundImage: "url('/assets/Working-2.jpg')", // Replace with your own
+            backgroundImage: "url('/assets/PeopleW.webp')", // Replace with your own
           }}
         />
 

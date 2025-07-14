@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import FadeInSection from './FadeInSection';
 import { useNavigate } from 'react-router-dom';
 
 const HeroSection: React.FC = () => {

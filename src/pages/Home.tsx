@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import FadeInSection from "../components/FadeInSection";
 import About from '../components/About';
-import Trainings from '../components/Trainings';
+import Trainings from '../components/TrainingBanner';
 import Pod1Details from '../components/pod-specific/POD-1';
 import Pod5Layout from '../components/pod-specific/POD-5';
 
@@ -30,7 +30,7 @@ const Home: React.FC = () => {
           backgroundImage:
             "url('https://sibelco.getbynder.com/m/5f7bb5a8955a535b/large-Sib_EUR_BE_HQ_016.jpg')",
         }}
-        animate={{ scale: [1, 1.1, 1] }}
+        animate={{ scale: [1, 1.03, 1] }}
         transition={{
           duration: 10,
           repeat: Infinity,
@@ -75,5 +75,5 @@ const Home: React.FC = () => {
       <Pod5Layout/>
       </div>
   );
-
+};
 export default Home;

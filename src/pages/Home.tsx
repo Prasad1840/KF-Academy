@@ -4,8 +4,9 @@ import Navbar from "../components/Navbar";
 import FadeInSection from "../components/FadeInSection";
 import About from '../components/About';
 import Trainings from '../components/TrainingBanner';
-import Pod1Details from '../components/pod-specific/POD-1';
+import Pod1Details from '../components/pod-specific/PodShowcase';
 import Pod5Layout from '../components/pod-specific/POD-5';
+import PodShowcase from "../components/pod-specific/PodShowcase";
 
 const DiagonalStripe = () => {
   return (
@@ -71,8 +72,7 @@ const Home: React.FC = () => {
 
     <About />
       <Trainings />
-      <Pod1Details />
-      <Pod5Layout/>
+      <PodShowcase />
       </div>
   );
 };

@@ -1,7 +1,8 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { motion, type Variants } from "framer-motion";
+import Navbar from "../components/Navbar";
 
 export const onboardingData = [
   {
@@ -9,7 +10,7 @@ export const onboardingData = [
     subheading: "Hoonartek Onboarding",
     description:
       "Complete HR formalities and initiate SAP ID process for Korn Ferry systems access.",
-    
+
     details: `Once you receive onboarding communication from the Hoonartek HR team, your first step will be to complete and submit all required forms. These will be reviewed and, once finalized, some documents will be sent to Korn Ferry by the PMO for further processing.
 <b>Note:</b> If you are an existing Hoonartek employee, you may not be required to resubmit these documents. In such cases, only Korn Ferry-specific policies, circulated by the PMO team, will need your review and acknowledgment.
 Parallelly, you will receive an email from PMO named <b>“DocuSign | Korn Ferry Policies”</b> asking you to acknowledge Korn Ferry's internal policies.
@@ -19,9 +20,9 @@ This SAP ID is like an Employee ID for Korn Ferry and is essential for your acce
       {
         title: " SAP ID Process Initiation",
         description: `We will initiate your SAP ID process to give you access to internal tools and resources.`,
-                image: "https://media.dtnext.in/imported/import/Images/Article/201709200116084667_Wearing-ID-cards-must-for-government-staff_SECVPF.gif",
+        image: "https://media.dtnext.in/imported/import/Images/Article/201709200116084667_Wearing-ID-cards-must-for-government-staff_SECVPF.gif",
 
-        details:` Once you submit all required documents to Hoonartek HR, the PMO shortlists the necessary files including your signed Korn Ferry policy documents and forwards them to the Korn Ferry team.
+        details: ` Once you submit all required documents to Hoonartek HR, the PMO shortlists the necessary files including your signed Korn Ferry policy documents and forwards them to the Korn Ferry team.
 
 <p>This begins your SAP ID generation, which is essential for accessing Korn Ferry systems like Outlook and Teams.</p>
 
@@ -42,7 +43,7 @@ This SAP ID is like an Employee ID for Korn Ferry and is essential for your acce
         title: " Holiday Calendar and Mapping",
         description:
           "You'll receive the holiday calendar and we'll map your schedule accordingly.",
-                image: "https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?cs=srgb&dl=pexels-leeloothefirst-5386754.jpg&fm=jpg",
+        image: "https://images.pexels.com/photos/5386754/pexels-photo-5386754.jpeg?cs=srgb&dl=pexels-leeloothefirst-5386754.jpg&fm=jpg",
 
         details: `<div>
   <p>
@@ -181,7 +182,7 @@ This SAP ID is like an Employee ID for Korn Ferry and is essential for your acce
         title: " Timesheet Submission on KEKA",
         description:
           "Learn how to submit your timesheets on KEKA for payroll processing.",
-                image: "https://img.freepik.com/premium-photo/male-hand-showing-clock-time-management_220873-23689.jpg",
+        image: "https://img.freepik.com/premium-photo/male-hand-showing-clock-time-management_220873-23689.jpg",
 
         details: `<div>
   <p>
@@ -205,7 +206,7 @@ This SAP ID is like an Employee ID for Korn Ferry and is essential for your acce
         title: "Ticket Raising on Keka",
         description:
           " Guidelines to raise tickets on KEKA for any technical or HR issues.",
-                image: "https://media.istockphoto.com/id/1423369897/photo/call-center-worker.jpg?s=612x612&w=0&k=20&c=KaxWNnsroknjxkXjfJijLhmdomOGFt4T-RwUF0qK3hc=",
+        image: "https://media.istockphoto.com/id/1423369897/photo/call-center-worker.jpg?s=612x612&w=0&k=20&c=KaxWNnsroknjxkXjfJijLhmdomOGFt4T-RwUF0qK3hc=",
 
         details: `<div>
   <p>
@@ -233,7 +234,7 @@ This SAP ID is like an Employee ID for Korn Ferry and is essential for your acce
         title: " Post-SAP Access and Manager Introduction",
         description:
           "Meet your manager and team for introductions and next steps.",
-                image: "https://img.freepik.com/premium-photo/two-confident-business-man-shaking-hands-meeting-office_33755-7713.jpg",
+        image: "https://img.freepik.com/premium-photo/two-confident-business-man-shaking-hands-meeting-office_33755-7713.jpg",
 
         details: `<div>
   <p>
@@ -266,8 +267,6 @@ const Onboarding: React.FC = () => {
   const navigate = useNavigate();
 
   const [hoveredPhaseIndex, setHoveredPhaseIndex] = useState<number | null>(null);
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
 
   // Navigate to Learn More page
   const handleLearnMore = useCallback(
@@ -287,95 +286,43 @@ const Onboarding: React.FC = () => {
     },
   });
 
-  // Toggle Dark Mode
-  const toggleDarkMode = () => setIsDarkMode(!isDarkMode);
-
-  // Scroll progress calculation
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    const docHeight = document.body.scrollHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    setScrollProgress(scrollPercent);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <div
-      className={`${
-        isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gradient-to-b from-green-50 to-blue-50 text-gray-800"
-      } min-h-screen p-8 relative font-sans transition-colors duration-300`}
+      className="bg-gradient-to-b from-green-50 to-blue-50 text-gray-800 min-h-screen relative font-sans transition-colors duration-300"
     >
-{/* Scroll Progress Bar */}
-<div className="fixed top-0 left-0 w-full h-1 z-50">
-  {/* Main Progress Line */}
-  <motion.div
-    className="h-full origin-left rounded-r-full"
-    style={{
-      background: isDarkMode
-        ? "linear-gradient(to right, #90cdf4, #4299e1, #3182ce)"
-        : "linear-gradient(to right, #1a202c, #2d3748, #4a5568)",
-      boxShadow: isDarkMode
-        ? "0 0 10px #90cdf4, 0 0 20px #4299e1"
-        : "0 0 10px #1a202c, 0 0 20px #2d3748",
-    }}
-    initial={{ scaleX: 0 }}
-    animate={{ scaleX: scrollProgress / 100 }}
-    transition={{
-      type: "spring",
-      stiffness: 80,
-      damping: 20,
-    }}
-  />
-</div>
-
-
-
-      {/* Dark Mode Toggle */}
-      <div className="fixed top-4 right-4 z-50">
-        <button
-          onClick={toggleDarkMode}
-          className={`px-4 py-2 rounded-full shadow ${
-            isDarkMode
-              ? "bg-yellow-400 text-gray-900 hover:bg-yellow-500"
-              : "bg-gray-800 text-white hover:bg-gray-900"
-          } transition-colors duration-300`}
-        >
-          {isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-        </button>
-      </div>
-
-      {/* -------------------- Page Title -------------------- */}
-      <h1
-        className="text-5xl mb-8 drop-shadow-lg block skew-x-[-10deg] text-center mx-auto "
-        style={{
-          fontWeight: 500,
-        //  fontFamily: "Gotham Medium, Gotham A",
-          color: isDarkMode ? "#ffffff" : "#2f855a",
-        }}
-      >
-        ONBOARDING
-      </h1>
-
-      {/* -------------------- Video Section -------------------- */}
-      {/* <div className="flex justify-center mb-12">
-        <video
-          src="/videos/onboarding.mp4"
-          controls
-          autoPlay
-          loop
-          muted
-          className="rounded-xl shadow-lg w-full md:w-3/4 lg:w-1/2"
+      {/* Header Section */}
+      <div className="h-[80vh] bg-black relative w-full overflow-hidden">
+        <motion.div
+          className="absolute inset-0 bg-cover bg-center opacity-30"
+          style={{
+            backgroundImage:
+              "url('https://cdn.buttercms.com/s5MfYnxMTs2lHXpiW6sp')",
+          }}
         />
-      </div> */}
+        <motion.div
+          initial={{ x: "100%" }}
+          animate={{ x: "0%" }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute top-1/2 right-0 w-[150%] h-[300%] bg-black opacity-30 rotate-[45deg] z-20 pointer-events-none origin-top-right"
+        />
+        <Navbar />
+
+        {/* ONBOARDING Heading */}
+        <div className="relative px-6 text-center mt-[32vh]">
+          <h1 className="text-9xl font opacity-900">
+            <span
+              className="inline-block skew-x-[-10deg]"
+              style={{ color: "#48bb78" }}
+            >
+              <span className="font-bold text-cyan-green">ONBOARDING</span>
+            </span>
+          </h1>
+        </div>
+      </div>
 
       {/* -------------------- Phases Mapping -------------------- */}
       {onboardingData.map((phase, phaseIndex) => (
-        <div key={phaseIndex} className="relative mb-24">
-          
+        <div key={phaseIndex} className="relative mt-16 mb-24">
           {/* ----- Phase Header ----- */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -384,10 +331,10 @@ const Onboarding: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="text-center relative"
           >
-            <h2 className="text-5xl font-bold" style={{ color: isDarkMode ? "#48bb78" : "#2f855a" }}>
+            <h2 className="text-5xl font-bold" style={{ color: "#2f855a" }}>
               {phase.phase}
             </h2>
-            <h3 className="text-3xl mt-2" style={{ color: isDarkMode ? "#68d391" : "#38a169" }}>
+            <h3 className="text-3xl mt-2" style={{ color: "#38a169" }}>
               {phase.subheading}
             </h3>
 
@@ -402,15 +349,43 @@ const Onboarding: React.FC = () => {
               aria-describedby={`phase-details-${phaseIndex}`}
             >
               <p className="max-w-3xl mx-auto">{phase.description}</p>
+
+              {/* Hover Indicator */}
+              {hoveredPhaseIndex !== phaseIndex && (
+                <motion.div
+                  initial={{ opacity: 0, y: -5 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  // transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+                  className="flex justify-center items-center mt-2 text-green-600"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-6 h-6 animate-bounce"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 9l-7 7-7-7"
+                    />
+                  </svg>
+                  <span className="ml-2 text-sm text-green-700 font-medium">
+                    Hover to view details
+                  </span>
+                </motion.div>
+              )}
+
+              {/* Hovered Details */}
               {hoveredPhaseIndex === phaseIndex && phase.details && (
                 <motion.div
                   id={`phase-details-${phaseIndex}`}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className={`mt-4 text-5 shadow rounded p-2 w-250 mx-auto ${
-                    isDarkMode ? "bg-gray-800 text-gray-100" : " text-gray-800"
-                  }`}
+                  className="mt-4 text-base shadow rounded p-4 w-3/4 mx-auto text-gray-800 bg-white"
                 >
                   <div
                     dangerouslySetInnerHTML={{
@@ -422,17 +397,17 @@ const Onboarding: React.FC = () => {
             </div>
 
             <div
-              className="border-t-2 w-1/2 mx-auto mt-6"
-              style={{ borderColor: isDarkMode ? "#48bb78" : "#9ae6b4" }}
+              className="border-t-2 w-1/2 mx-auto mt-8"
+              style={{ borderColor: "#9ae6b4" }}
             />
           </motion.div>
 
-          {/* Timeline & Steps  */}
+          {/* Timeline & Steps */}
           <div className="relative mt-16 max-w-7xl mx-auto">
             {/* Vertical Timeline */}
             <div
               className="absolute left-1/2 transform -translate-x-1/2 w-1 top-0 bottom-0 z-0"
-              style={{ backgroundColor: isDarkMode ? "#68d391" : "#68d391" }}
+              style={{ backgroundColor: "#68d391" }}
             ></div>
 
             {/* Steps Mapping */}
@@ -458,8 +433,8 @@ const Onboarding: React.FC = () => {
                   <div
                     className="absolute left-1/2 transform -translate-x-1/2 w-10 h-10 text-white font-bold rounded-full border-4 flex items-center justify-center shadow z-20"
                     style={{
-                      backgroundColor: isDarkMode ? "#48bb78" : "#2f855a",
-                      borderColor: isDarkMode ? "#1a202c" : "#ffffff",
+                      backgroundColor: "#2f855a",
+                      borderColor: "#ffffff",
                     }}
                   >
                     {stepIndex + 1}
@@ -476,22 +451,20 @@ const Onboarding: React.FC = () => {
                         isLeft ? "md:ml-auto md:pr-6" : "md:mr-auto md:pl-6"
                       } max-w-md`}
                     >
-                      <h4 className="text-xl font-bold" style={{ color: isDarkMode ? "#68d391" : "#2f855a" }}>
+                      <h4 className="text-xl font-bold" style={{ color: "#2f855a" }}>
                         {step.title}
                       </h4>
                       <p className="mt-2">{step.description}</p>
 
                       {/* Learn More Button */}
                       <motion.button
-                        whileHover={{ scale: 1.05 }}
+                        whileHover={{scale: 1.08, boxShadow: "0px 8px 25px rgba(72, 187, 120, 0.6)" }}
                         whileTap={{ scale: 0.97 }}
                         transition={{ type: "spring", stiffness: 300 }}
                         onClick={() => handleLearnMore(phaseIndex, stepIndex)}
-                        className={`mt-4 px-4 py-2 rounded-full shadow-md hover:shadow-lg transition-colors duration-300 ${
-                          isDarkMode
-                            ? "bg-green-500 text-gray-900 hover:bg-green-400"
-                            : "bg-gradient-to-r from-green-500 to-green-700 text-white"
-                        }`}
+                         className="relative inline-block mt-4 px-6 py-3 rounded-full shadow-md overflow-hidden text-white font-semibold tracking-wide
+                                    bg-gradient-to-r from-green-500 to-green-700 hover:from-green-600 hover:to-green-800
+                                    focus:outline-none focus:ring-4 focus:ring-green-300 transition-all duration-300"
                       >
                         Learn More →
                       </motion.button>

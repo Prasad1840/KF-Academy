@@ -17,7 +17,7 @@ const cardData = [
         dedication to making a broader positive impact.
         <br />
         <Link
-          to="/hoonartek"
+          to="https://hoonartek.com/"
           className="inline-block mt-4 text-sm font-semibold text-white underline hover:text-blue-300 transition"
         >
           Learn More →
@@ -32,7 +32,7 @@ const cardData = [
     description:
       <p>Korn Ferry empowers global transformation through talent, leadership, and organizational excellence.
         <Link
-          to="/hoonartek"
+          to="https://www.kornferry.com/"
           className="inline-block mt-4 text-sm font-semibold text-white underline hover:text-blue-300 transition"
         >
           Learn More →

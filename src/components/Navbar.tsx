@@ -44,7 +44,8 @@ export default function Navbar() {
 
         <li className="group relative cursor-pointer px-2">
             <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
-            Project & Structure
+            
+            <Link to="/podshowcase" >Project & Structure</Link>
         </li>
         
         <li className="group relative cursor-pointer px-2">

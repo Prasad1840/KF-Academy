@@ -11,6 +11,7 @@ import ReactTraining from "./pages/training-pages/ReactTraining";
 import AngularTraining from "./pages/training-pages/AngularTraining";
 import TypescriptTraining from "./pages/training-pages/TypescriptTraining";
 import { SkillPage } from "./pages/trainingLogic";
+import PodShowcase from "./components/pod-specific/PodShowcase";
 const App: React.FC = () => {
   return (
 
@@ -21,6 +22,7 @@ const App: React.FC = () => {
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/training" element={<Training />} />
+        <Route path="/podshowcase" element={<PodShowcase />} />
         <Route path="/training/react" element={<ReactTraining />} />
         <Route path="/training/angular" element={<AngularTraining />} />
         <Route path="/training/type-script" element={<TypescriptTraining />} />

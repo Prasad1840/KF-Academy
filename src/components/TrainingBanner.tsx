@@ -44,7 +44,7 @@ const HeroSection: React.FC = () => {
     Access structured training modules, explore project-specific skill paths, and learn at your pace, all aligned with Korn Ferry’s standards. Begin your learning journey with clarity and confidence&nbsp;
     <span
       onClick={() => navigate('/training')}
-      className="text-emerald-800 underline hover:text-emerald-900 transition"
+      className="text-emerald-800 underline font-bold hover:text-emerald-900 transition"
     >
       here
     </span>.

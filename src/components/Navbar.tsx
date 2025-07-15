@@ -36,7 +36,11 @@ export default function Navbar() {
         
       </div>
       {/* Center - Nav Links */}
-      <ul className="flex space-x-6 text-white opacity-80 font-medium justify-center w-2/4 relative">
+      <ul className="flex space-x-6 text-white opacity-80 font-medium justify-center w-3/4 relative">
+        <li className="group relative cursor-pointer px-2"  >
+            <Link to="/" >Home</Link>
+            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
+        </li>
         <li className="group relative cursor-pointer px-2"  >
             <Link to="/onboarding" >Onboarding</Link>
             <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
@@ -55,14 +59,9 @@ export default function Navbar() {
 
         <li className="group relative cursor-pointer px-2">
             <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
-            Contact
+            <Link to="/contacts" >Contacts</Link>
         </li>
 
-        
-        <li className="group relative cursor-pointer px-2">
-            <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-white transition-all duration-300 ease-in-out transform -translate-x-1/2 group-hover:w-full"></span>
-            About
-        </li>
 
         {/* Resources Dropdown */}
         <li

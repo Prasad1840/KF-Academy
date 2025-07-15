@@ -385,7 +385,7 @@ const Onboarding: React.FC = () => {
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-4 text-base shadow rounded p-4 w-3/4 mx-auto text-gray-800 bg-white"
+                  className="mt-4 text-base shadow rounded p-4 w-3/4 mx-auto text-gray-800"
                 >
                   <div
                     dangerouslySetInnerHTML={{

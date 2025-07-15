@@ -3,6 +3,8 @@ import { motion, AnimatePresence, easeOut, easeInOut } from "framer-motion";
 import { Filter, ChevronDown, ChevronUp, X, RotateCcw } from "lucide-react"; // Added RotateCcw for reset icon
 import Sidebar from "../components/TrainSidebar"; // Importing the Sidebar component
 import { useNavigate } from "react-router-dom";
+import { usePodFilterStore } from "../store/usePodFilterStore";
+import Navbar from "../components/Navbar";
 
 
 type Pod = {
@@ -80,29 +82,6 @@ const pods: Pod[] = [
   }
 ];
 
-// ... rest of the code remains the same
-import { usePodFilterStore } from "../store/usePodFilterStore";
-
-// Add motivational quotes array
-const motivationalQuotes: string[] = [
-  "Success is not the key to happiness. Happiness is the key to success.",
-  "Opportunities don't happen, you create them.",
-  "The only way to do great work is to love what you do.",
-  "Don't watch the clock; do what it does. Keep going.",
-  "The future depends on what you do today."
-];
-
-const Training: React.FC = () => {
-  const [quoteIndex, setQuoteIndex] = useState(0);
- 
- const selectedPod = usePodFilterStore((state) => state.selectedPod);
-const setSelected = usePodFilterStore((state) => state.setSelected);
-const clearSelectedPod = usePodFilterStore((state) => state.clearSelectedPod);
-
-
-
-const navigate = useNavigate();
-
 const skillRouteMap: Record<string, string> = {
   "React": "/training/react",
   "Tailwind CSS": "/skills/tailwind",
@@ -110,7 +89,7 @@ const skillRouteMap: Record<string, string> = {
   "NestJS": "/skills/nestjs",
   "Node.js": "/skills/nodejs",
   "Vite.js": "/skills/vite",
-  "Zustand": "/trainig/zustand",
+  "Zustand": "/training/zustand",
   "MongoDB": "/skills/mongodb",
   "Docker": "/skills/docker",
   "Kubernetes": "/skills/kubernetes",
@@ -144,6 +123,27 @@ const skillRouteMap: Record<string, string> = {
   "Data Analytics": "/skills/data-analytics"
 };
 
+
+
+// Add motivational quotes array
+const motivationalQuotes: string[] = [
+  "Success is not the key to happiness. Happiness is the key to success.",
+  "Opportunities don't happen, you create them.",
+  "The only way to do great work is to love what you do.",
+  "Don't watch the clock; do what it does. Keep going.",
+  "The future depends on what you do today."
+];
+
+const Training: React.FC = () => {
+  const [quoteIndex, setQuoteIndex] = useState(0);
+ 
+  const selectedPod = usePodFilterStore((state) => state.selectedPod);
+  const setSelected = usePodFilterStore((state) => state.setSelected);
+  const clearSelectedPod = usePodFilterStore((state) => state.clearSelectedPod);
+
+  const navigate = useNavigate();
+
+
   // Quotes cycle
   useEffect(() => {
     const interval = setInterval(() => {
@@ -154,13 +154,11 @@ const skillRouteMap: Record<string, string> = {
 
 
 
- 
-
   return (
     <div className="relative min-h-screen w-full bg-gray-50 font-[Gotham A,Gotham B,sans-serif]">
 
       {/* Header Section */}
-      <div className="relative w-full h-[350px]">
+      <div className="relative w-full h-[500px]">
         <video
           className="absolute top-0 left-0 w-full h-full object-cover"
           autoPlay
@@ -168,12 +166,13 @@ const skillRouteMap: Record<string, string> = {
           muted
           playsInline
         >
-          <source src="/videos/earth.mp4" type="video/mp4" />
+          <source src="/assets/earth.mp4" type="video/mp4" />
         </video>
         <div className="absolute top-0 left-0 w-full h-full bg-black/40"></div>
 
         <div className="relative z-10 flex flex-col md:flex-row justify-between items-start p-6 w-full">
-          <div className="mb-4 mt-10 md:mb-0 max-w-2xl">
+          <Navbar />
+          <div className="mb-4 mt-32 md:mb-0 max-w-2xl">
             <h1 className="text-7xl font-bold text-[#05C690] tracking-wide font-gotham transform hover:scale-105 transition-transform duration-300">
               TRAINING
             </h1>
@@ -194,7 +193,7 @@ const skillRouteMap: Record<string, string> = {
           </div>
 
           {/* Rotating Quote */}
-          <div className="text-right max-w-lg md:ml-auto relative">
+          <div className="text-right mt-16 max-w-lg md:ml-auto relative">
             <div className="relative px-8">
               <span className="absolute top-[-80px] left-[-20px] text-[200px] text-[#05C690] font-serif select-none leading-none">
                 “
@@ -272,9 +271,16 @@ const skillRouteMap: Record<string, string> = {
           )}
           {selectedPod.length === 0 && (
             <div className="text-center">
-              <p className="text-3xl text-gray-500 mb-4 italic">
-                Please select a POD to view its skills.
-              </p>
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <br />
+              <h2 className="italic text-2xl font-semibold text-gray-500 mb-3">Please select a POD to view its skills.</h2>
+              
             </div>)}
         </div>
       </div>
